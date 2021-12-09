@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="https://app.pipefy.com/apps/style.css" />
-  </head>
-  <body>
-    <h1 id="pipe-name">Pipe name</h1>
+    <link href="https://app.pipefy.com/apps/style.css" media="all" rel="stylesheet"/>
+    <style>
+        body {
+            padding: 14px;
+        }
+
+        #container {
+            height: 100%;
+            overflow: auto;
+        }
+
+        #list {
+            margin-top: 15px;
+        }
+
+        #list span {
+            padding: 6px;
+            font-size: 36px;
+            line-height: 40px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<!--<h1 id="pipe-name">Pipe name</h1>-->
 <!--       <h3 style="color: black;"> Made with <3 from Tec to Legal </h3> -->
-    <p id="pipe-view-message">because we know your life is hard enough as it is :) </p>
-    <!-- Pipefy Apps SDK.js -->
-    <script src="https://app.pipefy.com/apps/client.js"></script>
-    <script>
-      var pipefy = PipefyApp.init();
-      PipefyApp.render(function() {
-        pipefy.pipe().then(function(pipe) {
-          document.getElementById('pipe-name').innerHTML = "Made with <3 from Tec to Legal" ;
-          document.getElementById('pipe-view-message').innerHTML = "because we know your life is hard enough as it is :) ";
+<!--<p id="pipe-view-message">because we know your life is hard enough as it is :) </p>-->
+<div id="container">
+    <div id="list"></div>
+</div>
+<!-- Pipefy Apps SDK.js -->
+<script src="https://app.pipefy.com/apps/client.js"></script>
+<script>
+    var pipefy = PipefyApp.init();
+    PipefyApp.render(function () {
+        pipefy.pipe().then(function (pipe) {
+            document.getElementById('list').insertAdjacentHTML("afterend", "<p>Made with <3 from Tec to Legal </br> <span> because we know your life is hard enough as it is :) </span></p>");
+            // document.getElementById('pipe-name').innerHTML = "";
+            // document.getElementById('pipe-view-message').innerHTML = "because we know your life is hard enough as it is :) ";
         });
-      });
-    </script>
-  </body>
+    });
+</script>
+</body>
 </html>
