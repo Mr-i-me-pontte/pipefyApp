@@ -6,14 +6,16 @@
   </head>
   <body>
     <h1 id="pipe-name">Pipe name</h1>
-    
+<!--       <h3 style="color: black;"> Made with <3 from Tec to Legal </h3> -->
+<!--     <p id="pipe-view-message">because we know your life is hard enough as it is :) </p> -->
     <!-- Pipefy Apps SDK.js -->
     <script src="https://app.pipefy.com/apps/client.js"></script>
     <script>
       var pipefy = PipefyApp.init();
       PipefyApp.render(function() {
         pipefy.pipe().then(function(pipe) {
-          document.getElementById('pipe-name').innerHTML = pipe.name;
+          document.getElementById('pipe-name').innerHTML = "Made with <3 from Tec to Legal" ;
+          document.getElementById('pipe-view-message').innerHTML = "because we know your life is hard enough as it is :) ";
         });
       });
     </script>
