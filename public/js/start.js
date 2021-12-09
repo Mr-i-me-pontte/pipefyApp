@@ -83,37 +83,6 @@ var searchEmoji = function (p) {
 };
 
 PipefyApp.initCall({
-    // 'card-buttons': function (p, pipe) {
-    //     return [{
-    //         icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Ficon-blue.svg?1505357332379',
-    //         text: 'Card button',
-    //         callback: openCardDropdown,
-    //     }];
-    // }, 
-    // 'card-badges': function (p, context) {
-    //     return [{
-    //         live: function (p, context) {
-    //             return new Promise(function (resolve) {
-    //                 p.get('card', 'public', 'emoji').then(function (emoji) {
-    //                     if (emoji) {
-    //                         resolve({
-    //                             text: emoji,
-    //                             refreshInterval: 20,
-    //                             color: ['green', 'red', 'yellow', 'blue', null][Math.floor(Math.random() * 5)],
-    //                             title: "Using this emoji: " + emoji,
-    //                         })
-    //                     } else {
-    //                         resolve(null);
-    //                     }
-    //                 });
-    //             });
-    //         }
-    //     }, {
-    //         text: context.card.current_phase.name,
-    //         icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Ficon-gray.svg?1505743926910',
-    //         title: 'Sample fixed badge',
-    //     }]
-    // }, 
     'card-tab': function (p, pipe) {
         return {
             icon: './images/icon-blue.svg', title: 'Gerar Contrato HE', buttons: [{
@@ -142,34 +111,4 @@ PipefyApp.initCall({
             hide_create_button: false,
         })
     }, 
-    // 'pipe-buttons': function (p, pipe) {
-    //     return [{
-    //         icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Ficon-white.svg?1505355257252',
-    //         text: 'Emoji',
-    //         callback: function (p) {
-    //             p.dropdown({
-    //                 title: 'Emoji app', items: [{
-    //                     title: '🤔 Open flags Sidebar', callback: openSidebar,
-    //                 }, {
-    //                     title: '🙈 Open emojis Modal', callback: openModal,
-    //                 }, {
-    //                     title: '✅ Show success notification', callback: function (p) {
-    //                         p.showNotification('🎉 Sample success notification', 'success');
-    //                         p.closeDropdown();
-    //                     },
-    //                 }, {
-    //                     title: '❌ Show error notification', callback: function (p) {
-    //                         p.showNotification('😢 Sample error notification', 'error');
-    //                         p.closeDropdown();
-    //                     },
-    //                 },]
-    //             })
-    //         }
-    //     }, {
-    //         icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Femojipedia.svg?1505356197998',
-    //         text: 'Emojipedia',
-    //         url: 'https://emojipedia.org',
-    //         target: 'blank'
-    //     }];
-    // }
 });
