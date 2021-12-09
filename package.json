@@ -1,0 +1,29 @@
+{
+  "name": "pipefy-emoji-app",
+  "version": "0.0.2",
+  "description": "Pipefy sample app to add emojis support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.0",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "request-promise": "^4.2.1",
+    "request": "^2.81.0"
+  },
+  "engines": {
+    "node": "8.1.x"
+  },
+  "repository": {
+    "url": "https://www.pipefy.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "pipefy",
+    "express"
+  ]
+}
