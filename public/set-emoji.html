@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      #container {
+        height: 100%;
+        overflow: auto;
+      }
+      
+      #list a {
+        padding: 2px;
+        font-size: 24px;
+        line-height: 26px;
+        display: inline-block;
+        text-decoration: none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="list"></div>
+    </div>
+    
+    <!-- Pipefy Apps SDK.js -->
+    <script src="https://d1ukdhoxof1oxs.cloudfront.net/pipefy-client.js"></script>
+    <script src="./js/emoji.js"></script>
+    <script>
+      var p = PipefyApp.init();
+      
+      window.emojis.forEach(function(emoji) {
+        var newEmoji = document.createElement("a");
+        newEmoji.href = "#";
+        newEmoji.addEventListener("click", function(e) {
+          p.set('card', 'public', 'emoji', emoji[0]).then(function(status){
+            p.closeDropdown();
+          });
+        });
+        
+        var newContent = document.createTextNode(emoji[0]); 
+        newEmoji.appendChild(newContent); //add the text node to the newly created span.
+        
+        document.getElementById('list').appendChild(newEmoji);
+        
+      });
+    </script>
+  </body>
+</html>

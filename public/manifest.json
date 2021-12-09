@@ -1,0 +1,15 @@
+{
+  "name": "Emoji App",
+  "short_description": "Add emoji to your cards and learn more about them.",
+  "description": "Add emoji to your cards and learn more about them. \n **This is a sample app.**",
+  "icon": "https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Femoji-icon.svg?1505355049359",
+  "author": "Pipefy, Inc.",
+  "init_url": "./",
+  "screenshots": ["https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Fnew-whatsapp-emojis.jpg?1505355622244"],
+  "features": [
+    "pipe-buttons",
+    "card-buttons",
+    "card-badges",
+    "card-tab"
+  ]
+}

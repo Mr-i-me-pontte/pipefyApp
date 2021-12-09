@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" media="all" href="https://app.pipefy.com/apps/style.css" />
+    <style>
+      #list {
+        padding-top: 14px;
+        padding-bottom: 10px;
+      }
+      #list a {
+        display:block;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>Emojis Attached to <span id="card-title">...</span></h4>
+    
+    <div id="container">
+      <div id="list"></div>
+    </div>
+    
+    <!-- Pipefy Apps SDK.js -->
+    <script src="https://d1ukdhoxof1oxs.cloudfront.net/pipefy-client.js"></script>
+    <script src="./js/emoji.js"></script>
+    <script>
+      p = PipefyApp.init();
+      
+      PipefyApp.render(function() {
+        var list = document.getElementById('list');
+        
+        p.card().then(function(card) {
+          document.getElementById('card-title').textContent = card.title;
+        });
+        
+        
+        p.cardAttachments().then((attachments) => {
+          
+          return attachments.filter(function(attachment){
+            return attachment.url.indexOf('https://emojipedia.org') === 0;
+          });
+        }).then(function(attachments) {
+          var links = document.createElement("div");
+          
+          attachments.forEach(function(emoji) {
+            var link = document.createElement("a"); 
+            var title = document.createTextNode(emoji.name); 
+            link.appendChild(title);
+            
+            link.title = emoji.name;
+            link.href = emoji.url;
+            link.target = 'blank';
+            
+            links.appendChild(link);
+          });
+          
+          list.innerHTML = '';
+          list.appendChild(links);
+          
+          PipefyApp.resizeTo("#list");
+        });
+      });
+    </script>
+  </body>
+</html>
