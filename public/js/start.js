@@ -137,7 +137,7 @@ PipefyApp.initCall({
     'pipe-view': function (p, pipe) {
         return ({
             icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Ficon-white.svg?1505355257252',
-            text: 'Help :)',
+            text: ' Help ',
             url: './pipe-view.html',
             hide_create_button: false,
         })
