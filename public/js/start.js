@@ -121,7 +121,8 @@ PipefyApp.initCall({
                     p.card().then(function ({title}) {
                         // 'https://apitcdev.pontte.com.br/Pipefy/v1/generate/he/contract'
                         // https://apitcstaging.pontte.com.br/Pipefy/v1/generate/he/contract
-                        fetch('https://apitc.pontte.com.br/Pipefy/v1/generate/he/contract', {
+                        // 'https://apitc.pontte.com.br/Pipefy/v1/generate/he/contract'
+                        fetch('https://apitcdev.pontte.com.br/Pipefy/v1/generate/he/contract', {
                             method: 'POST', headers: {
                                 'Content-Type': 'application/json'
                             }, body: JSON.stringify({cardId: title})
