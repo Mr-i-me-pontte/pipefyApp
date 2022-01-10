@@ -116,7 +116,8 @@ PipefyApp.initCall({
     // }, 
     'card-tab': function (p, pipe) {
         return {
-            icon: './images/icon-blue.svg', title: 'Gerar Contrato HE', buttons: [{
+            icon: './images/icon-blue.svg', title: 'Gerar Contrato HE', 
+            buttons: [{
                 text: 'Gerar', callback: function (p) {
                     p.card().then(function ({title}) {
                         // 'https://apitcdev.pontte.com.br/Pipefy/v1/generate/he/contract'
@@ -132,9 +133,26 @@ PipefyApp.initCall({
                             .catch(err => console.log(err));
                     })
                 }
+            },
+            {
+                text: 'Enviar', callback: function (p) {
+                    p.card().then(function ({title}) {
+                        //https://wv63t68cv2.execute-api.us-east-1.amazonaws.com/dev/v1/generate/send/qitech
+                        //https://wv63t68cv2.execute-api.us-east-1.amazonaws.com/Stage/v1/generate/send/qitech
+
+                        fetch('https://wv63t68cv2.execute-api.us-east-1.amazonaws.com/Stage/v1/generate/send/qitech', {
+                            method: 'POST', headers: {
+                                'Content-Type': 'application/json'
+                            }, body: JSON.stringify({cardId: title})
+                        })
+                            .then(res => res.json())
+                            .then(data => console.log(data))
+                            .catch(err => console.log(err));
+                    })
+                }
             },]
         }
-    }, 
+    },
     'pipe-view': function (p, pipe) {
         return ({
             icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Ficon-white.svg?1505355257252',
