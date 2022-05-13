@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <link href="https://app.pipefy.com/apps/style.css" media="all" rel="stylesheet"/>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://app.pipefy.com/apps/style.css"
+      media="all"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            padding: 14px;
-        }
+      body {
+        padding: 14px;
+      }
 
-        #container {
-            height: 100%;
-            overflow: auto;
-        }
+      #container {
+        /*         display: flex; */
+        height: 100%;
+        overflow: auto;
+      }
 
-        #list {
-            margin-top: 15px;
-        }
+      #list {
+        margin-top: 15px;
+      }
 
-        img {
-            height: 300PX;
-            width: 100%;
-        }
+      #list iframe {
+        height: 100%;
+        width: 100%;
+      }
 
-        #list span {
-            padding: 6px;
-            font-size: 36px;
-            line-height: 40px;
-            display: inline-block;
-        }
+      #list span {
+        padding: 6px;
+        font-size: 36px;
+        line-height: 40px;
+        display: inline-block;
+      }
+      div {
+        width: 100%;
+        height: 100%;
+      }
     </style>
-</head>
-<body>
-<!--<h1 id="pipe-name">Pipe name</h1>-->
-<!--       <h3 style="color: black;"> Made with <3 from Tec to Legal </h3> -->
-<!--<p id="pipe-view-message">because we know your life is hard enough as it is :) </p>-->
-<div id="container">
-    <div id="list"></div>
-</div>
-<!-- Pipefy Apps SDK.js -->
-<script src="https://app.pipefy.com/apps/client.js"></script>
-<script>
-    var pipefy = PipefyApp.init();
-    PipefyApp.render(function () {
+  </head>
+  <body>
+    <!--<h1 id="pipe-name">Pipe name</h1>-->
+    <!--       <h3 style="color: black;"> Made with <3 from Tec to Legal </h3> -->
+    <!--<p id="pipe-view-message">because we know your life is hard enough as it is :) </p>-->
+    <div id="container">
+      <div id="list">
+        <h3>Tutorial</h3>
+        <iframe
+          alt=""
+          src="https://www.iorad.com/player/1932396/App-Pipefy---How-to-y"
+        ></iframe>
+        <p>
+          Made with Love from Tec to Legal <br />
+          <span> because we know your life is hard enough as it is :) </span>
+        </p>
+      </div>
+    </div>
+    <!-- Pipefy Apps SDK.js -->
+    <script src="https://app.pipefy.com/apps/client.js"></script>
+    <script>
+      var pipefy = PipefyApp.init();
+      PipefyApp.render(function () {
         pipefy.pipe().then(function (pipe) {
-            const tutorial = '<img alt="" src="https://user-images.githubusercontent.com/80412271/145323719-7eed7d86-9127-483a-93e8-41a7f08c80a2.png">'
-            document.getElementById('list').insertAdjacentHTML("afterend", "<h3> Tutorial </h3>" + tutorial +"</br>"+ "<p>Made with <3 from Tec to Legal </br> <span> because we know your life is hard enough as it is :) </span></p>" );
-            // document.getElementById('pipe-name').innerHTML = "";
-            // document.getElementById('pipe-view-message').innerHTML = "because we know your life is hard enough as it is :) ";
+          const tutorial =
+            '<iframe alt="" src="https://www.iorad.com/player/1932396/App-Pipefy---How-to-y">';
+
+          document.getElementById("list").insertAdjacentHTML(
+            "afterend"
+            // "<div><h3> Tutorial </h3></div>" +
+            // tutorial +
+            // "</br>" +
+            // "<div> <hr/> <p>Made with <3 from Tec to Legal </br> <span> because we know your life is hard enough as it is :) </span></p></div>"
+          );
+          // document.getElementById('pipe-name').innerHTML = "";
+          // document.getElementById('pipe-view-message').innerHTML = "because we know your life is hard enough as it is :) ";
         });
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
