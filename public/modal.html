@@ -34,15 +34,5 @@
     
     <!-- Pipefy Apps SDK.js -->
     <script src="https://d1ukdhoxof1oxs.cloudfront.net/pipefy-client.js"></script>
-    <script src="./js/emoji.js"></script>
-    <script>
-      window.emojis.forEach(function(emoji) {
-        var newEmoji = document.createElement("span"); 
-        var newContent = document.createTextNode(emoji[0]); 
-        newEmoji.appendChild(newContent); //add the text node to the newly created span.
-        
-        document.getElementById('list').appendChild(newEmoji);
-      });
-    </script>
   </body>
 </html>
